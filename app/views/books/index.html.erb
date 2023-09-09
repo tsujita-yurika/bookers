@@ -1,9 +1,76 @@
 <h1>Books</h1>
-<p>Title</p>
-<p>Body</p>
 
+<% @books.each do |book| %>
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Title</th>-->
+<!--      <th>Body</th>-->
+<!--      <th> colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <td>トラブル知らずのシステム設計</td>-->
+<!--      <td>システム設計の要点を図解で説明してくれます</td>-->
+<!--      <td>-->
+<!--        <a class = "" href = "" >Show</a>-->
+<!--      </td>-->
+<!--       <a class = "" href = "" >Edit</a>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <a data-confirm = "Are you sure?" class = "" rel = "nofollow" data-method = "delete" href = "">Destroy</a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>たのしいruby</td>-->
+<!--      <td>Rubyの入門におすすめです</td>-->
+<!--      <td>-->
+<!--        <a class = "" href = "" >Show</a>-->
+<!--      </td>-->
+<!--        <a class = "" href = "" >Edit</a>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <a data-confirm = "Are you sure?" class = "" rel = "nofollow" data-method = "delete" href = "">Destroy</a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>入門Git</td>-->
+<!--      <td>gitについての基本操作から内部構造まで解説してくれます</td>-->
+<!--      <td>-->
+<!--        <a class = "" href = "" >Show</a>-->
+<!--      </td>-->
+<!--        <a class = "" href = "" >Edit</a>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <a data-confirm = "Are you sure?" class = "" rel = "nofollow" data-method = "delete" href = "">Destroy</a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>達人プログラマー入門</td>-->
+<!--      <td>プログラマ入門者は必読！</td>-->
+<!--      <td>-->
+<!--        <a class = "" href = "" >Show</a>-->
+<!--      </td>-->
+<!--       <a class = "" href = "" >Edit</a>-->
+<!--      </td>-->
+<!--      <td>-->
+<!--        <a data-confirm = "Are you sure?" class = "" rel = "nofollow" data-method = "delete" href = "">Destroy</a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
 
-<%= form_with model: @Book, url: '/books', method: :post do |f| %>
+<span>
+    <%= link_to book.title, book_path(book.id) %>
+</span>
+
+<% end %>
+
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+<h1>New book</h1>
+
 <h4>title</h4>
 <%= f.text_field :title %>
 
