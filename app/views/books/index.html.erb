@@ -1,6 +1,5 @@
 <h1>Books</h1>
 
-
 <table>
   <thead>
     <tr>
@@ -18,13 +17,13 @@
         <%= link_to "Show", book_path(book.id) %>
       </td>
       <td>
-        <a class = "edit_book.id" href = "/books/:id/edit" >Edit</a>
+        <%= link_to "Edit", edit_book_path(book.id) %>
       </td>
       <td>
-        <a data-confirm = "Are you sure?" class = "destroy" rel = "nofollow" data-method = "delete" href = "/books/:id">Destroy</a>
+        <%= link_to "Destroy", book_path(book.id),method: :delete, "data-confirm" => "Are you sure?" %>
       </td>
     </tr>
-  　<% end %>
+    <% end %>
   </tbody>
 </table>
 
