@@ -28,11 +28,23 @@ class BooksController < ApplicationController
   def back
   end
 
- def destroy
+  def destroy
     book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
- end
+  end
+
+  def create
+   @book = Book.new(book_params)
+   if @book.save
+    flash[:notice] = "Book was successfully created."
+    redirect_to book_path(@book.id)
+  # elsif 
+     
+   else
+    render :new
+   end
+  end
 
   private
 
